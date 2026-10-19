@@ -1,4 +1,4 @@
-name: Build RAY 254 APK
+name: Build RAY 254 APK V2
 on: [push]
 jobs:
   build:
@@ -14,12 +14,18 @@ jobs:
           node-version: '18'
       - run: npm install -g cordova
       - run: |
-          cordova create app com.ray254.app "RAY 254"
-          cd app
+          cordova create rayapp com.ray254.app.v2 "RAY 254"
+          cd rayapp
           cordova platform add android
-          echo '<html><body style="margin:0"><iframe src="https://ray-254.vercel.app" style="width:100vw;height:100vh;border:0"></iframe></body></html>' > www/index.html
+          rm -rf www/*
+      - run: |
+          mkdir -p rayapp/www
+          cp RAY*.html rayapp/www/index.html || cp RAY*.txt rayapp/www/index.html || ls -la
+          ls -lh rayapp/www/
+      - run: |
+          cd rayapp
           cordova build android --debug
       - uses: actions/upload-artifact@v4
         with:
-          name: RAY-254-APK
+          name: RAY-254-V2-FIXED
           path: "**/*.apk"
