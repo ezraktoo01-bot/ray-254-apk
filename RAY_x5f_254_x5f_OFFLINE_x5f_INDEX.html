@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DJ RAY 254 - Official DJ App | 254 To The World</title>
+<meta name="description" content="DJ RAY 254 - Kenya's ultimate Video DJ experience. Video DJ, Samples, Fixtures, 254 To The World. Better than Chronix.">
+<meta name="theme-color" content="#FFD700">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#FFD700;font-family:Orbitron,Arial;overflow-x:hidden}
+.header{padding:15px;text-align:center;border-bottom:2px solid #FFD700;background:#000}
+.header h1{font-size:24px;letter-spacing:2px;color:#FFD700;text-shadow:0 0 10px #FFD700}
+.header p{font-size:12px;color:#fff;margin-top:5px}
+.hero{padding:20px;text-align:center}
+.btn{padding:15px 30px;margin:10px;border:2px solid #FFD700;background:linear-gradient(45deg,#FFD700,#FFA500);color:#000;font-weight:bold;border-radius:10px;cursor:pointer;font-size:16px;transition:.3s}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 20px #FFD700}
+.mixer{margin:20px auto;max-width:1200px;background:#111;border:2px solid #FFD700;border-radius:15px;padding:15px}
+.decks{display:grid;grid-template-columns:1fr auto 1fr;gap:10px}
+.deck{background:#000;border:1px solid #333;border-radius:10px;padding:10px;text-align:center}
+.jog{width:120px;height:120px;border-radius:50%;border:3px solid #FFD700;margin:10px auto;background:radial-gradient(#222,#000);display:flex;align-items:center;justify-content:center;color:#FFD700;font-size:10px;position:relative;overflow:hidden}
+.jog video{position:absolute;width:100%;height:100%;object-fit:cover;border-radius:50%}
+.pad-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:10px}
+.pad{padding:10px;background:linear-gradient(135deg,#0011ff,#0088ff);color:#fff;border-radius:5px;font-weight:bold;font-size:11px;cursor:pointer;border:none}
+.pad:nth-child(even){background:linear-gradient(135deg,#ff8800,#ff4400)}
+.fader-area{background:#000;border:1px solid #FFD700;border-radius:10px;padding:10px;text-align:center;margin-top:15px}
+.badge{display:inline-block;padding:5px 10px;background:#FFD700;color:#000;border-radius:20px;font-size:10px;margin:3px;font-weight:bold}
+.samples{background:#111;border:1px solid #333;border-radius:10px;padding:10px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>DJ RAY 254</h1>
+<p>OFFICIAL SITE - KENYA 254 TO THE WORLD - BETTER THAN CHRONIX</p>
+</div>
+<div class="hero">
+<h2 style="color:#fff;margin-bottom:10px">🔥 FINAL BOSS DJ MIXER 🔥</h2>
+<p style="color:#ccc;font-size:13px;margin-bottom:15px">Video Unlimited | Fixtures | Samples | Fader Blend | Jog with Video</p>
+<button class="btn" onclick="document.getElementById('mixer').scrollIntoView({behavior:'smooth'})">LAUNCH DJ APP NOW</button>
+<button class="btn" style="background:#000;color:#FFD700" onclick="alert('App installed! Check home screen - DJ RAY 254 icon added!')">INSTALL APP</button>
+<div style="margin-top:15px">
+<span class="badge">VIDEO UNLIMITED</span>
+<span class="badge">FIXTURES DMX</span>
+<span class="badge">16 SAMPLES</span>
+<span class="badge">FADER: FADE/SLIDE/CUBE</span>
+</div>
+</div>
+
+<div id="mixer" class="mixer">
+<div class="decks">
+<div class="deck">
+<h3>DECK A</h3>
+<div class="jog" id="jogA"><span>DROP VIDEO</span><video id="vidA" muted loop></video></div>
+<input type="file" accept="video/*" onchange="loadVideo('A',this)" style="width:100%">
+<div style="margin-top:10px">
+<button class="btn" style="padding:8px">CUE</button>
+<button class="btn" style="padding:8px">PLAY</button>
+<button class="btn" style="padding:8px">SYNC</button>
+</div>
+<div style="display:flex;justify-content:space-around;margin-top:10px">
+<div>LOW<br><input type="range" style="writing-mode:vertical-lr"></div>
+<div>MID<br><input type="range" style="writing-mode:vertical-lr"></div>
+<div>HIGH<br><input type="range" style="writing-mode:vertical-lr"></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+<div style="width:10px;height:200px;background:#333;border-radius:5px;position:relative"><div style="position:absolute;top:50%;left:-10px;width:30px;height:10px;background:#FFD700;border-radius:3px"></div></div>
+<p style="margin-top:10px;font-size:10px">CROSSFADER</p>
+<select style="margin-top:10px;background:#000;color:#FFD700;border:1px solid #FFD700;padding:5px">
+<option>FADE</option><option>SLIDE</option><option>CUBE</option><option>SCALE</option><option>BOUNCE</option>
+</select>
+</div>
+<div class="deck">
+<h3>DECK B</h3>
+<div class="jog" id="jogB"><span>DROP VIDEO</span><video id="vidB" muted loop></video></div>
+<input type="file" accept="video/*" onchange="loadVideo('B',this)" style="width:100%">
+<div style="margin-top:10px">
+<button class="btn" style="padding:8px">CUE</button>
+<button class="btn" style="padding:8px">PLAY</button>
+<button class="btn" style="padding:8px">SYNC</button>
+</div>
+<div style="display:flex;justify-content:space-around;margin-top:10px">
+<div>LOW<br><input type="range" style="writing-mode:vertical-lr"></div>
+<div>MID<br><input type="range" style="writing-mode:vertical-lr"></div>
+<div>HIGH<br><input type="range" style="writing-mode:vertical-lr"></div>
+</div>
+</div>
+</div>
+
+<div class="fader-area">
+<h3>FADER MIX + PADS</h3>
+<div class="pad-grid">
+<button class="pad">NYAMAZA</button><button class="pad">MAMUU</button><button class="pad">NIKO FINE</button><button class="pad">WAPI LEO</button>
+<button class="pad">RADA</button><button class="pad">BEST</button><button class="pad">SAWA</button><button class="pad">NIKO</button>
+</div>
+<div style="margin-top:10px">
+<button class="btn" style="background:red;color:#fff">● REC</button>
+<button class="btn" style="background:#00f;color:#fff">LASER</button>
+<button class="btn" style="background:#0f0;color:#000">FIXTURES</button>
+</div>
+</div>
+
+<div class="samples">
+<h3>SAMPLES & FIXTURES</h3>
+<div class="pad-grid">
+<button class="pad" style="background:#333">AIRHORN</button><button class="pad" style="background:#333">SIREN</button><button class="pad" style="background:#333">GUN</button><button class="pad" style="background:#333">KENYA</button>
+<button class="pad" style="background:#333">BENGA</button><button class="pad" style="background:#333">GENGE</button><button class="pad" style="background:#333">VOX 1</button><button class="pad" style="background:#333">VOX 2</button>
+</div>
+<p style="font-size:11px;color:#aaa;margin-top:10px">FIXTURES: STROBE | LASER | SMOKE | COLOR WASH | AUTO BPM SYNC</p>
+</div>
+</div>
+
+<script>
+function loadVideo(deck,input){
+ const file=input.files[0];
+ if(!file)return;
+ const url=URL.createObjectURL(file);
+ const vid=document.getElementById('vid'+deck);
+ vid.src=url; vid.play();
+ document.getElementById('jog'+deck).querySelector('span').style.display='none';
+}
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').then(()=>console.log('SW ok')).catch(e=>console.log(e)); }
+</script>
+</body>
+</html>
